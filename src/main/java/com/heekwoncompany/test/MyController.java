@@ -3,6 +3,7 @@ package com.heekwoncompany.test;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MyController {
@@ -31,5 +32,15 @@ public class MyController {
 		model.addAttribute("name", "홍길동");
 		
 		return "board/view";
+	}
+	
+	@RequestMapping(value = "/reply")
+	public ModelAndView reply() {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("name", "홍길동");
+		mv.setViewName("board/reply");
+		
+		return mv;
 	}
 }
