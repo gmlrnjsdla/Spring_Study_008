@@ -12,4 +12,9 @@ public class MyController {
 		return "member";
 	}
 	
+	@RequestMapping(value = "/list")
+	public String list() {
+		
+		return "list";
+	}
 }
